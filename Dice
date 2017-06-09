@@ -1,1 +1,20 @@
+#my first Python program. 
+#I chose this one to compare to a similar program made in C++
 
+import random
+import time
+
+min = 1
+max = 6
+
+rollAgain = "yes"
+
+while rollAgain == "yes" or rollAgain == "y":
+     print("Rolling...")
+     time.sleep(2)
+     print("You got:")
+     print(random.randint(min,max))
+     print(random.randint(min,max))
+     
+     print("Would you like to roll again?")
+     rollAgain = input()
