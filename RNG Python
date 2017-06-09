@@ -1,0 +1,22 @@
+# This is a RNG "Guess the Number" game
+
+import random
+import time
+
+numGuesses = 0
+
+print("Welcome! I bet you can\'t guess my number!")
+time.sleep(1)
+
+num = random.randint(1,20)
+
+print("I am thinking of a number between 1 and 20. What is your guess?")
+userGuess = input()
+
+while userGuess < 1 or userGuess > 20:
+    print("The number must be between 1 and 20.")
+    print("Try again: ")
+    userGuess = input()
+    
+if userGuess < num:
+    print("Too low.")
