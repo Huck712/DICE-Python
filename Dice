@@ -4,17 +4,42 @@
 import random
 import time
 
-min = 1
-max = 6
+roll = "yes"
+numDice = 0
 
-rollAgain = "yes"
 
-while rollAgain == "yes" or rollAgain == "y":
-     print("Rolling...")
-     time.sleep(2)
-     print("You got:")
-     print(random.randint(min,max))
-     print(random.randint(min,max))
-     
-     print("Would you like to roll again?")
-     rollAgain = input()
+print("This program will roll as many dice as you need.")
+time.sleep(1) #this makes the program pause a bit
+
+print("\nWould you like to roll?")
+roll = input()
+
+#input validation to make sure they type yes (y) or no (no)
+while roll != "yes" and roll != "y" and roll != "no" and roll != "n":
+    print("\nType yes (or 'y') or no (or 'n') to roll.")
+    roll = input()
+
+while roll == "yes" or roll == "y":
+    print("\nHow many dice do you want to roll?")
+    numDice = int(input())
+
+    print("\nRolling...")
+    time.sleep(2) #again, a pause 
+
+    print("\nYou got: ")
+
+    for i in range(0, numDice): #this iterates as many times as the user wants
+        print(random.randint(1,6)) #generates the random numbers between 1-6
+       
+    print("\nRoll again?")
+    roll = input()
+        
+    #input validation again
+    while roll != "yes" and roll != "y" and roll != "no" and roll != "n":
+        print("\nType yes or no.")
+        roll = input()
+        
+
+print("\nThanks for using my program!")
+
+input()
